@@ -1,7 +1,12 @@
 /**
  * Basic typography style for copy text
  */
+
+html {
+  font-size: 100%;
+}
+
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  line-height: 1.5;
 }

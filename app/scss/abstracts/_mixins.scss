@@ -4,7 +4,6 @@
 
 /// Event wrapper
 /// @author Harry Roberts
-/// @param {Bool} $self [false] - Whether or not to include current selector
 /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
 @mixin on-event($self: false) {
   @if $self {
@@ -23,12 +22,15 @@
   }
 }
 
-/// Make a context based selector a little more friendly
-/// @author Kitty Giraudel
-/// @param {String} $context
-@mixin when-inside($context) {
-  #{$context} & {
+// Media queries
+@mixin breakpoint-min($size){
+  @media (min-width: map-get($breakpoints-up, $size)){
     @content;
   }
 }
 
+@mixin breakpoint-max($size){
+  @media (max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
+}
