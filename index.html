@@ -6,12 +6,254 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/dist/style.css">
-    <title>Document</title>
+    <title>Bitly</title>
 </head>
 <body>
 
+<header>
+    <!--  Mobile Menu  -->
+    <nav>
+        <div class="navbar-mobile container hide-for-desktop">
+            <a href="#" class="logo">
+                <img  src="/img/logo.svg" alt="Bitly logo.">
+            </a>
 
+            <button id="mobile-menu-btn" class="navbar-mobile__hamburger">
+                <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
 
-<script src="/dist/style.css"></script>
+        <div id="mobile-menu" class="mobile-menu hidden hide-for-desktop">
+            <ul class="mobile-menu__top container">
+                <li>
+                    <a class="mobile-menu__link" href="#">Why Bitly?</a>
+                    <ul class="mobile-menu__submenu closed">
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-book-open">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                <div>
+                                    <span>Bitly 101</span>
+                                    <span>An introduction to Bitly's features</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-code">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <div>
+                                    <span>Integrations & Api</span>
+                                    <span>How Bitly works with your tech stack</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-globe">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                                <div>
+                                    <span>Enterprise Class</span>
+                                    <span>Bitly scales to the size you need</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="mobile-menu__link" href="#">Solutions</a>
+                    <ul class="mobile-menu__submenu closed">
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-thumbs-up">
+                                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                                </svg>
+                                <div>
+                                    <span>Social Media</span>
+                                    <span>Amplify your brand on social</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-radio">
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                    <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                                </svg>
+                                <div>
+                                    <span>Digital Marketing</span>
+                                    <span>Drive omni-channel engagement</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-message-circle">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                                <div>
+                                    <span>Customer Service</span>
+                                    <span>Connect with customers</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="22px" viewBox="0 0 24 22">
+                                    <title>small / developer / default</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <g id="Review" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Navigation-Icons" transform="translate(-103.000000, -89.000000)"
+                                           fill="currentColor">
+                                            <g id="small-/-developer-/-default"
+                                               transform="translate(100.000000, 85.000000)">
+                                                <g id="programming-browser" transform="translate(3.000000, 4.000000)">
+                                                    <path d="M2.25,21.5 C1.009,21.5 0,20.491 0,19.25 L0,2.865 C0.004,1.564 1.064,0.504 2.363,0.5 L21.643,0.5 C22.939,0.504 23.996,1.56 24,2.855 L24,19.135 C23.996,20.436 22.936,21.496 21.637,21.5 C21.637,21.5 21.636,21.5 21.636,21.5 L2.25,21.5 Z M1.5,19.25 C1.5,19.664 1.836,20 2.25,20 L21.635,20 C22.11,19.999 22.499,19.61 22.5,19.133 L22.5,6.5 L1.5,6.5 L1.5,19.25 Z M22.5,5 L22.5,2.857 C22.499,2.386 22.113,2.001 21.641,2 L2.365,2 C1.89,2.002 1.501,2.391 1.5,2.867 L1.5,5 L22.5,5 Z"
+                                                          id="Shape" fill-rule="nonzero"></path>
+                                                    <path d="M16.5,17 C16.3,17 16.111,16.922 15.97,16.78 C15.678,16.488 15.678,16.012 15.97,15.719 L18.44,13.249 L15.97,10.779 C15.828,10.638 15.75,10.449 15.75,10.249 C15.75,10.049 15.828,9.86 15.97,9.719 C16.112,9.578 16.3,9.499 16.5,9.499 C16.7,9.499 16.889,9.577 17.03,9.719 L20.03,12.719 C20.322,13.011 20.322,13.487 20.03,13.78 L17.03,16.78 C16.889,16.922 16.7,17 16.5,17 Z"
+                                                          id="Path" fill-rule="nonzero"></path>
+                                                    <path d="M7.5,17 C7.3,17 7.111,16.922 6.97,16.78 L3.97,13.78 C3.678,13.488 3.678,13.012 3.97,12.719 L6.97,9.719 C7.111,9.578 7.3,9.5 7.5,9.5 C7.7,9.5 7.889,9.578 8.03,9.72 C8.172,9.861 8.25,10.05 8.25,10.25 C8.25,10.45 8.172,10.639 8.03,10.78 L5.56,13.25 L8.03,15.72 C8.322,16.012 8.322,16.488 8.03,16.781 C7.889,16.922 7.7,17 7.5,17 Z"
+                                                          id="Path" fill-rule="nonzero"></path>
+                                                    <path d="M10.5,17 C10.385,17 10.269,16.973 10.165,16.921 C9.795,16.736 9.645,16.285 9.829,15.915 L12.829,9.915 C12.957,9.659 13.214,9.501 13.5,9.501 C13.615,9.501 13.731,9.528 13.834,9.58 C14.204,9.765 14.355,10.217 14.17,10.586 L11.17,16.586 C11.043,16.841 10.786,17 10.5,17 Z"
+                                                          id="Path" fill-rule="nonzero"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <div>
+                                    <span>For Developers</span>
+                                    <span>Build links into any workflow</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="mobile-menu__link" href="#">Features</a>
+                    <ul class="mobile-menu__submenu closed">
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                <div>
+                                    <span>Link Management</span>
+                                    <span>Build and share powerful links</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-anchor"><circle cx="12" cy="5" r="3"></circle><line x1="12" y1="22" x2="12" y2="8"></line><path d="M5 12H2a10 10 0 0 0 20 0h-3"></path></svg>
+                                <div>
+                                    <span>Branded Links</span>
+                                    <span>Increase engagement and exposure</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="18"></line></svg>
+                                <div>
+                                    <span>Mobile Links</span>
+                                    <span>Create a seamless user experience</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                                <div>
+                                    <span>Campaign Management & Analytics</span>
+                                    <span>Track and optimize every touchpoint</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link link-with-icon" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" version="1.1"><title>QR Codes</title><g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="Pricing-–-Feature-Bottom-Fold---XL" transform="translate(-559.000000, -876.000000)" stroke="currentColor" stroke-width="0.975"><g id="QR-Codes" transform="translate(559.000000, 876.000000)"><rect id="Rectangle" x="3.4125" y="3.4125" width="1.95" height="1.95"></rect><rect id="Rectangle" x="3.4125" y="10.2375" width="1.95" height="1.95"></rect><rect id="Rectangle" x="10.2375" y="3.4125" width="1.95" height="1.95"></rect><polyline id="Path" points="3.4125 8.2875 7.3125 8.2875 7.3125 9.2625"></polyline><polyline id="Path" points="9.2625 9.2625 9.2625 12.1875 12.1875 12.1875 12.1875 9.2625 11.2125 9.2625"></polyline><line x1="7.3125" y1="11.2125" x2="7.3125" y2="12.1875" id="Path"></line><polyline id="Path" points="7.3125 3.4125 7.3125 6.3375 8.2875 6.3375"></polyline><line x1="10.2375" y1="7.3125" x2="12.1875" y2="7.3125" id="Path"></line><path d="M0.4875,3.9 L0.4875,1.4625 C0.4875,0.924022369 0.924022369,0.4875 1.4625,0.4875 L3.9,0.4875" id="Path"></path><path d="M11.7,0.4875 L14.1375,0.4875 C14.6759776,0.4875 15.1125,0.924022369 15.1125,1.4625 L15.1125,3.9" id="Path"></path><path d="M15.1125,11.7 L15.1125,14.1375 C15.1125,14.6759776 14.6759776,15.1125 14.1375,15.1125 L11.7,15.1125" id="Path"></path><path d="M3.9,15.1125 L1.4625,15.1125 C0.924022369,15.1125 0.4875,14.6759776 0.4875,14.1375 L0.4875,11.7" id="Path"></path></g></g></g></svg>
+                                <div>
+                                    <span>QR Codes</span>
+                                    <span>Bridge offline to online experiences</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="mobile-menu__link" href="#">Pricing</a>
+                </li>
+                <li>
+                    <a class="mobile-menu__link" href="#">Resources</a>
+                    <ul class="mobile-menu__submenu closed">
+                        <li>
+                            <a class="mobile-menu__submenu-link" href="#">
+                                <span>Blog</span>
+                                <span>Tutorials, explainers and more</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link" href="#">
+                                <span>Resource Library</span>
+                                <span>Ebooks and webinars</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link" href="#">
+                                <span>Developers</span>
+                                <span>API documentation and resources</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="mobile-menu__submenu-link" href="#">
+                                <span>Support</span>
+                                <span>FAQs and contact information</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a class="mobile-menu__link" href="#">Company</a>
+                    <ul class="mobile-menu__submenu closed">
+                        <li><a class="mobile-menu__submenu-link" href="#">About</a></li>
+                        <li><a class="mobile-menu__submenu-link" href="#">Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="mobile-menu__bottom container">
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Sign up Free</a></li>
+                <li><a href="#" class="btn btn-default">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<script src="/dist/script.js"></script>
 </body>
 </html>

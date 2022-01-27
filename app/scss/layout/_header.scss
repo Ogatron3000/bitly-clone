@@ -1,3 +1,134 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: $white;
+  position: relative;
+  z-index: 1;
+
+  &__hamburger {
+
+    > svg {
+      display: block;
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+.mobile-menu {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__top {
+
+    > li:not(:last-child) {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    > li:not(:nth-child(4)) > a:after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      border-top-color: currentcolor;
+      border-top-style: inset;
+      border-right-color: currentcolor;
+      border-bottom-color: currentcolor;
+      border-bottom-width: 6px;
+      border-left-color: currentcolor;
+      content: "";
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-color: #b0b1b4 transparent transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 1rem;
+    }
+  }
+
+  &__link {
+    font-size: $text-lg;
+    position: relative;
+    display: block;
+    padding: .7rem 1rem;
+    font-size: $text-lg;
+    color: $text-color-not-so-black;
+  }
+
+  &__submenu {
+    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: .2s ease-in-out;
+  }
+
+  &__submenu-link {
+    padding: .7rem 1rem;
+    font-weight: 600;
+
+    span {
+      display: block;
+    }
+
+    span:first-child {
+      margin-bottom: 5px;
+    }
+
+    span:last-child {
+      font-weight: normal;
+      color: $gray;
+      font-size: pxToRem(14px);
+    }
+
+    &.link-with-icon {
+      display: flex;
+      align-items: start;
+
+      > svg {
+        min-width: 24px;
+        margin-right: 16px;
+        color: $gray;
+      }
+    }
+
+    @include on-event() {
+      background: $really-light-gray;
+
+      svg {
+        color: $blue;
+      }
+
+      span:first-child {
+        color: $blue;
+      }
+    }
+  }
+
+  &__bottom {
+    background: $really-dark-blue;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+
+    > li {
+      margin-bottom: 10px;
+
+      > a {
+        padding: .7rem 1rem;
+        color: $white;
+      }
+    }
+  }
+}
+
+

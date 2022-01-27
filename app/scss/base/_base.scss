@@ -22,14 +22,26 @@ html {
   box-sizing: inherit;
 }
 
-/**
- * Basic styles for links
- */
+// Basic styles
 a {
+  display: block;
   color: $text-color;
   text-decoration: none;
 
   @include on-event {
-    color: $blue;
+    // remove styles
   }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }

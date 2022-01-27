@@ -1,3 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.btn {
+  display: block;
+  border-radius: 6px;
+  padding: .7rem 1rem;
+  transition: background 0.1s linear;
+}
+
+.btn-default {
+  color: $white;
+  background: $blue;
+
+  @include on-event {
+    background: $dark-blue;
+  }
+}

@@ -24,13 +24,13 @@
 
 // Media queries
 @mixin breakpoint-min($size){
-  @media (min-width: map-get($breakpoints-up, $size)){
+  @media (min-width: map-get($breakpoints-min, $size)){
     @content;
   }
 }
 
 @mixin breakpoint-max($size){
-  @media (max-width: map-get($breakpoints-down, $size)){
+  @media (max-width: map-get($breakpoints-max, $size)){
     @content;
   }
 }
