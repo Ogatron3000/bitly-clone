@@ -32,6 +32,7 @@ function browserSyncServe(cb) {
                 bottom: '0',
             },
         },
+        browser: "firefox",
     });
     cb();
 }
