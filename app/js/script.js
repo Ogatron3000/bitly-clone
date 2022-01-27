@@ -50,6 +50,24 @@ function initApp() {
             }
         })
     })
+
+    //
+    // Show Desktop Menu Submenus
+    //
+    // const desktopMenuLinks = document.querySelectorAll('.navbar-desktop__menu-link');
+    // desktopMenuLinks.forEach(link => {
+    //     link.addEventListener('mouseenter', function () {
+    //         if (link.childElementCount === 2) {
+    //             link.lastElementChild.style.display = 'block';
+    //         }
+    //     });
+    //
+    //     link.addEventListener('mouseleave', function () {
+    //         if (link.childElementCount === 2) {
+    //             link.lastElementChild.style.display = 'none';
+    //         }
+    //     });
+    // })
 }
 
 function openSubMenu(link) {

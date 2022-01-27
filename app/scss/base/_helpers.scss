@@ -58,9 +58,3 @@
 .link-submenu-open:after {
   transform: rotate(180deg);
 }
-
-.hide-for-desktop {
-  @include breakpoint-min('large') {
-    display: none !important;
-  }
-}

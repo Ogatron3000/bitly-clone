@@ -30,7 +30,7 @@
 }
 
 @mixin breakpoint-max($size){
-  @media (max-width: map-get($breakpoints-max, $size)){
+  @media (min-width: map-get($breakpoints-min, $size)){
     @content;
   }
 }
