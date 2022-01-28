@@ -1,3 +1,348 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+.hero {
+  padding: var(--page-gutter) 0;
+  color: $text-color-not-so-black;
+  align-items: center;
+
+  &__img {
+    grid-column: span 4;
+    max-width: 500px;
+    margin: 0 auto 16px;
+
+    @include breakpoint-min('medium') {
+      order: 1;
+      margin-right: 0;
+    }
+
+    @include breakpoint-min('large') {
+      grid-column: span 5;
+    }
+  }
+
+  &__content {
+    grid-column: span 4;
+
+    @include breakpoint-min('large') {
+      grid-column: span 7;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    @include breakpoint-min('large') {
+      font-size: $text-xxxl;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    font-size: 20px;
+
+    @include breakpoint-min('medium') {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__links {
+    width: fit-content;
+
+    @include breakpoint-min('medium') {
+      display: flex;
+      align-items: center;
+    }
+
+    @include breakpoint-min('large') {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    padding: 13px 30px;
+    margin-bottom: 16px;
+    text-align: center;
+    width: fit-content;
+    line-height: 1.5;
+
+    @include breakpoint-min('medium') {
+      margin-bottom: 0;
+      margin-right: 16px;
+    }
+
+    @include breakpoint-min('large') {
+      margin-bottom: 8px;
+      margin-right: 0;
+      font-size: $text-md;
+    }
+  }
+
+  &__quote {
+    color: $blue;
+
+    @include on-event() {
+      color: inherit;
+    }
+  }
+}
+
+.blue-text {
+  padding: 20px 0;
+
+  &__wrapper {
+    background: $light-blue;
+    color: $white;
+    padding: 30px 0;
+  }
+
+  &__logo {
+    display: none;
+
+    @include breakpoint-min('medium') {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      grid-column: span 4;
+    }
+  }
+
+  &__paragraph {
+    grid-column: span 4;
+
+    > a {
+      display: inline;
+      color: $white;
+    }
+
+    @include breakpoint-min('medium') {
+      grid-column: 5 / span 4;
+    }
+
+    @include breakpoint-min('medium') {
+      grid-column: 5 / span 6;
+
+      > a {
+        display: none;
+      }
+    }
+  }
+
+  &__learn-more-btn {
+    display: none;
+
+    @include breakpoint-min('large') {
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      grid-column: 11 / span 2;
+    }
+  }
+}
+
+.shorten {
+  padding: 20px 0;
+
+  &__wrapper {
+    background: $really-dark-blue;
+    padding: 30px 0;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    grid-column: span var(--grid-columns);
+
+    > form {
+      margin-bottom: 8px;
+
+      @include breakpoint-min('medium') {
+        display: flex;
+        align-items: center;
+      }
+
+      > input {
+        width: 100%;
+        height: 56px;
+        padding: 20px;
+        margin-bottom: 8px;
+        border: 1px solid $blue;
+        border-radius: 5px;
+        font-size: $text-md;
+        line-height: 1.5;
+
+        @include breakpoint-min('medium') {
+          flex-basis: 75%;
+          margin-bottom: 0;
+          margin-right: 16px;
+        }
+
+        @include breakpoint-min('large') {
+          height: 62px;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 2px rgba(206,218,250,1);
+          outline: none;
+        }
+      }
+
+      > button {
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        background: $darker-blue;
+        line-height: 1.5;
+
+        @include breakpoint-min('medium') {
+          flex-basis: 25%;
+        }
+
+        @include breakpoint-min('large') {
+          font-size: $text-md;
+        }
+
+        @include on-event() {
+          background: $blue;
+        }
+      }
+    }
+
+    > p {
+      color: $light-gray;
+      font-size: $text-sm;
+      text-align: center;
+
+      > a {
+        display: inline;
+        color: inherit;
+        text-decoration: underline;
+
+        @include on-event() {
+          color: $really-light-blue;
+        }
+      }
+    }
+  }
+
+  &__scroll {
+    text-align: center;
+
+    > img {
+      display: block;
+      margin: 8px auto 0;
+    }
+  }
+}
+
+.cards {
+  text-align: center;
+  padding: var(--page-gutter) 0;
+
+  &__title {
+    grid-column: span var(--grid-columns);
+    margin-bottom: 40px;
+
+    > h2 {
+      margin-bottom: 8px;
+    }
+
+    > p {
+      font-size: $text-md;
+    }
+  }
+
+  &__card {
+    grid-column: span var(--grid-columns);
+    margin-bottom: 40px;
+
+    @include breakpoint-min('large') {
+      grid-column: span 4;
+      text-align: start;
+    }
+
+    > img {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    > h3 {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__links {
+    grid-column: span var(--grid-columns);
+    margin: 0 auto;
+
+    a {
+      color: $blue;
+
+      &:first-child {
+        padding: 13px 30px;
+        margin-bottom: 16px;
+        line-height: 1.5;
+
+        @include breakpoint-min('large') {
+          font-size: $text-md;
+        }
+      }
+    }
+  }
+}
+
+.brands {
+  padding: var(--page-gutter) 0;
+
+  &__title {
+    grid-column: span var(--grid-columns);
+    text-align: center;
+  }
+
+  &__logos {
+    grid-column: span var(--grid-columns);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include breakpoint-min('medium') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    > img {
+      margin: 0 auto;
+    }
+  }
+}
+
+.cta {
+  padding: 20px 0;
+
+  &__wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: $really-dark-blue;
+    color: $white;
+    text-align: center;
+
+    @include breakpoint-min('large') {
+      padding: 80px 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 13px 30px;
+    line-height: 1.5;
+
+    @include breakpoint-min('large') {
+      font-size: $text-md;
+    }
+  }
+}

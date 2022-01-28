@@ -22,6 +22,28 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --grid-columns: 4;
+  --grid-gutter: 20px;
+  --page-gutter: 20px;
+
+  @include breakpoint-min('medium') {
+    --grid-columns: 8;
+    --page-gutter: 40px;
+  }
+
+  @include breakpoint-min('large') {
+    --grid-columns: 12;
+    --grid-gutter: 40px;
+    --page-gutter: 80px;
+  }
+}
+
+main {
+  padding-top: 80px;
+}
+
+
 // Basic styles
 a {
   display: block;
@@ -44,4 +66,21 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: $text-xl;
+}
+
+h3 {
+  font-size: $text-md;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
 }

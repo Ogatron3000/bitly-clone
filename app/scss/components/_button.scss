@@ -17,3 +17,12 @@
     background: $dark-blue;
   }
 }
+
+.btn-light {
+  color: $blue;
+  background: $even-lighter-blue;
+
+  @include on-event() {
+    background: $really-light-blue;
+  }
+}

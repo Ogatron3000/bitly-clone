@@ -7,7 +7,6 @@ document.addEventListener('readystatechange', function (e) {
     }
 })
 
-
 function initApp() {
     //
     // Show Mobile Menu
@@ -19,10 +18,12 @@ function initApp() {
 
     mobileMenuBtn.addEventListener('click', function () {
         if (hamburger.classList.contains('hidden')) {
+            // close
             hamburger.classList.remove('hidden');
             x.classList.add('hidden');
             mobileMenu.classList.add('hidden');
         } else {
+            // open
             hamburger.classList.add('hidden');
             x.classList.remove('hidden');
             mobileMenu.classList.remove('hidden');
