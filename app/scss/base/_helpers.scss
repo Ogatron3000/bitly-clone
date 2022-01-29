@@ -58,3 +58,11 @@
 .link-submenu-open:after {
   transform: rotate(180deg);
 }
+
+.faq-question-open {
+  background: $really-light-gray;
+
+  > h3:after {
+    transform: rotate(0deg) !important;
+  }
+}

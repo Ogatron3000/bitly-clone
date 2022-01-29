@@ -33,47 +33,75 @@ function initApp() {
     //
     // Show Mobile Menu Submenus
     //
-    let closingTimeout;
+    let closingSubmenuTimeout;
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function () {
             if (link.nextElementSibling) {
-                if (closingTimeout) {
-                    clearTimeout(closingTimeout);
+                if (closingSubmenuTimeout) {
+                    clearTimeout(closingSubmenuTimeout);
                 }
 
                 if (!link.classList.contains('link-submenu-open')) {
-                    closeOtherSubMenuIfOpen();
-                    openSubMenu(link);
+                    closeOtherElemIfExpanded('link-submenu-open');
+                    expand(link, 'link-submenu-open');
                 } else {
-                    closingTimeout = closeSubMenu(link);
+                    closingSubmenuTimeout = collapse(link, 'link-submenu-open');
                 }
+            }
+        })
+    })
+
+    //
+    // Show FAQ Answers
+    //
+    let closingFaqTimeout;
+    const faqQuestions = document.querySelectorAll('.faq__question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function () {
+            if (closingFaqTimeout) {
+                clearTimeout(closingFaqTimeout);
+            }
+
+            if (!question.classList.contains('faq-question-open')) {
+                closeOtherElemIfExpanded('faq-question-open');
+                expand(question, 'faq-question-open', 16);
+            } else {
+                closingFaqTimeout = collapse(question, 'faq-question-open');
             }
         })
     })
 }
 
-function openSubMenu(link) {
-    link.classList.add('link-submenu-open');
-    const subMenu = link.nextElementSibling;
-    subMenu.style.display = 'block';
+function expand(toggle, stylingClass, padding = null) {
+    toggle.classList.add(stylingClass);
+    const hiddenElem = toggle.nextElementSibling;
+    hiddenElem.style.display = 'block';
     setTimeout(function () {
-        subMenu.style.height = `${subMenu.scrollHeight}px`;
+        if (padding) {
+            hiddenElem.style.height = `${hiddenElem.scrollHeight + padding * 2}px`;
+            hiddenElem.style.paddingTop = `${padding}px`;
+            hiddenElem.style.paddingBottom = `${padding}px`;
+        } else {
+            hiddenElem.style.height = `${hiddenElem.scrollHeight}px`;
+        }
     }, 1);
 }
 
-function closeSubMenu(link) {
-    link.classList.remove('link-submenu-open');
-    const subMenu = link.nextElementSibling;
-    subMenu.style.height = '';
+function collapse(toggle, stylingClass) {
+    toggle.classList.remove(stylingClass);
+    const hiddenElem = toggle.nextElementSibling;
+    hiddenElem.style.height = '';
+    hiddenElem.style.paddingTop = '';
+    hiddenElem.style.paddingBottom = '';
     return setTimeout(function () {
-        subMenu.style.display = 'none';
+        hiddenElem.style.display = 'none';
     }, 200);
 }
 
-function closeOtherSubMenuIfOpen() {
-    if (document.querySelector('.link-submenu-open')) {
-        const openedSubMenuLink = document.querySelector('.link-submenu-open');
-        closeSubMenu(openedSubMenuLink);
+function closeOtherElemIfExpanded(stylingClass) {
+    if (document.querySelector(`.${stylingClass}`)) {
+        const expandedElem = document.querySelector(`.${stylingClass}`);
+        collapse(expandedElem, stylingClass);
     }
 }

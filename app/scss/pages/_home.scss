@@ -316,6 +316,59 @@
   }
 }
 
+.faq {
+  padding: var(--page-gutter) 0;
+
+  &__title {
+    grid-column: span var(--grid-columns);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    grid-column: span var(--grid-columns);
+    border-top: 1px solid $really-light-gray;
+  }
+
+  &__question {
+    padding: 16px 48px 16px 16px;
+    position: relative;
+    cursor: pointer;
+
+    @include on-event() {
+      background: $really-light-gray;
+    }
+
+    > h3:after {
+      content: "✖";
+      height: fit-content;
+      position: absolute;
+      right: 16px;
+      top: calc(50% - 8px);
+      transform: rotate(45deg);
+      color: $light-gray;
+      font-weight: normal;
+      transition: .2s;
+    }
+  }
+
+  &__answer {
+    display: none;
+    padding: 0 16px;
+    height: 0;
+    overflow: hidden;
+    transition: .2s;
+
+    > p:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    > a {
+      width: fit-content;
+    }
+  }
+}
+
 .cta {
   padding: 20px 0;
 
