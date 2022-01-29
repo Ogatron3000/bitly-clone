@@ -22,11 +22,13 @@ function initApp() {
             hamburger.classList.remove('hidden');
             x.classList.add('hidden');
             mobileMenu.classList.add('hidden');
+            document.body.style.position = 'unset';
         } else {
             // open
             hamburger.classList.add('hidden');
             x.classList.remove('hidden');
             mobileMenu.classList.remove('hidden');
+            document.body.style.position = 'fixed';
         }
     })
 

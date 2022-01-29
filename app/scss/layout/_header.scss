@@ -7,6 +7,8 @@ header {
   width: 100%;
   top: 0;
   background: $white;
+  z-index: 1;
+  overflow-y: auto;
 }
 
 .nav-mobile {
@@ -23,7 +25,6 @@ header {
   height: 80px;
   background: $white;
   position: relative;
-  z-index: 1;
 
   &__hamburger {
 
