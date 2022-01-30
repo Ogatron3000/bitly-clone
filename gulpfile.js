@@ -6,6 +6,7 @@ const cssnano = require('cssnano');
 const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
+const webpack = require('webpack-stream');
 
 function scssTask() {
     return src('app/scss/style.scss', { sourcemaps: true })
@@ -16,8 +17,21 @@ function scssTask() {
 
 function jsTask() {
     return src('app/js/script.js', { sourcemaps: true })
+        .pipe(
+            webpack({
+                mode: 'development',
+                module: {
+                    rules: [
+                        {
+                            test: /\.css$/,
+                            use: ['style-loader', 'css-loader']
+                        }
+                    ]
+                },
+            })
+        )
         .pipe(babel({ presets: ['@babel/preset-env'] }))
-        .pipe(terser())
+        .pipe(terser({module: true}))
         .pipe(dest('dist', { sourcemaps: '.' }));
 }
 

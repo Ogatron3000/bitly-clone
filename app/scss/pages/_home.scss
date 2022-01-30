@@ -293,12 +293,70 @@
   }
 }
 
+.feedback {
+  padding: var(--page-gutter) 0;
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .swiper {
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 10px;
+  }
+
+  &__slide {
+    background: white;
+    padding: 40px 15px;
+    box-shadow: -1px 2px 10px 0 rgba(0,0,0,.2);
+    box-sizing: border-box;
+  }
+
+  .feedback__images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .feedback__text {
+    font-size: $text-md;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: 40px;
+  }
+
+  .feedback__buttons {
+    width: 140px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    color: $light-gray;
+    background: $really-light-gray;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}
+
 .brands {
   padding: var(--page-gutter) 0;
 
   &__title {
     grid-column: span var(--grid-columns);
     text-align: center;
+    margin-bottom: 30px;
   }
 
   &__logos {

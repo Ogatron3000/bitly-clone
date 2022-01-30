@@ -1,3 +1,5 @@
+import { initSwiper } from "./swiper";
+
 //
 // Init
 //
@@ -53,6 +55,11 @@ function initApp() {
             }
         })
     })
+
+    //
+    // Init Swiper
+    //
+    initSwiper();
 
     //
     // Show FAQ Answers
