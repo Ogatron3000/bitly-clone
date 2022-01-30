@@ -1,3 +1,101 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+  padding: var(--page-gutter) 0;
+
+  &__wrapper {
+
+    @include breakpoint-min('medium') {
+      grid-template-columns: repeat(12, 1fr);
+      align-items: start;
+    }
+  }
+
+  &__links {
+    margin-bottom: 16px;
+    line-height: 1.5;
+
+    > h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__links--1,
+  &__links--2,
+  &__links--3,
+  &__links--4,
+  &__links--5,
+  &__links--6 {
+    grid-column: span 4;
+  }
+
+  @include breakpoint-min('medium') {
+
+    &__links--4 {
+      grid-row: 1;
+      grid-column: 9 / span 4;
+    }
+
+    &__links--6 {
+      grid-row: 2;
+      grid-column: 1 / span 4;
+    }
+  }
+
+  @include breakpoint-min('large') {
+
+    &__links--1,
+    &__links--2,
+    &__links--3,
+    &__links--4,
+    &__links--5,
+    &__links--6 {
+      grid-column: span 3;
+    }
+
+    &__links--1 {
+      grid-row: 1;
+      grid-column: 1 / span 3;
+    }
+
+    &__links--2 {
+      grid-column: 4 / span 3;
+    }
+
+    &__links--4 {
+      grid-column: 7 / span 3;
+    }
+  }
+
+  &__bottom {
+    grid-column: span 4;
+
+    @include breakpoint-min('large') {
+      grid-row: 1;
+      grid-column: 10 / span 3;
+    }
+
+    > a {
+      margin-bottom: 8px;
+    }
+
+    > p {
+      margin-bottom: 16px;
+      font-size: $text-sm;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    width: calc(24px * 7);
+    margin: 0 auto;
+
+    > a > svg {
+      display: block;
+    }
+  }
+}
