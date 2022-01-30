@@ -94,6 +94,10 @@
     width: calc(24px * 7);
     margin: 0 auto;
 
+    @include breakpoint-min('medium') {
+      margin-left: 0;
+    }
+
     > a > svg {
       display: block;
     }
